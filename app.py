@@ -27,7 +27,7 @@ except:
 # Configure Streamlit page
 st.set_page_config(
     page_title="YouTube Chatbot",
-    page_icon="chatbot_icon.png",
+    page_icon="images\icon.png",
     layout="wide"
 )
 
