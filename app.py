@@ -79,7 +79,11 @@ def extract_video_id(url_or_id):
 def get_transcript(video_id):
     """Get transcript from YouTube video"""
     try:
-        trans_list = YouTubeTranscriptApi.get_transcript(video_id=video_id, languages=['en'])
+        proxies = {
+            "http": st.secrets["HTTP_PROXY"],
+            "https": st.secrets["HTTPS_PROXY"]
+            }
+        trans_list = YouTubeTranscriptApi.get_transcript(video_id=video_id, languages=['en'], proxies= proxies)
         transcript = ' '.join(i['text'].replace('\n', ' ') for i in trans_list)
         return transcript, None
     except TranscriptsDisabled:
