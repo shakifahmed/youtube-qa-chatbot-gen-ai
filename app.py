@@ -40,6 +40,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 st.markdown("Ask questions about any YouTube video based on its transcript!")
 
 # Initialize session state
